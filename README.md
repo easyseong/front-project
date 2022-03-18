@@ -11,3 +11,6 @@ https://blog.naver.com/PostView.naver?blogId=rudnfskf2&logNo=222179376583&parent
 
 
 https://github.com/dsunni/spring-boot-react-jwt/blob/master/frontend/src/components/jwtlogin/LoginComponent.jsx =>참고소스 깃헙
+
+
+https://nyeongnyeong.tistory.com/194 => [React] JWT를 통한 회원 인증 시스템 구현 이렇게하는거래
