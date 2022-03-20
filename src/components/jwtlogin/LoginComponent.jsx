@@ -23,27 +23,31 @@ class LoginComponent extends Component {
   }
 
   loginClicked() {
+    console.log("username= "+this.state.username+"   passowrd="+this.state.password); //이건 잘 넘어가나
     BoardService.executeJwtAuthenticationService(
       this.state.username,
       this.state.password
     )
       .then((response) => {
-        console.log(response);
+        console.log("response= "+response); //undefined
         this.setState({
           token: response.data.token,
         });
+        
         BoardService.registerSuccessfulLoginForJwt(
           //username과 response.data.token을 사용해 사용자 확인
           this.state.username,
           this.state.token //토큰 어디서 받아오나? token: response.data.token인듯
         );
         this.props.history.push(`/welcome/${this.state.username}`); //성공하면 welcome페이지로 이동
+        
       })
       .catch(() => {
         this.setState({ showSuccessMessage: false });
         this.setState({ hasLoginFailed: true });
       });
   }
+  
 
   render() {
     return (
@@ -69,7 +73,7 @@ class LoginComponent extends Component {
             onChange={this.handleChange}
           />
           <button className="btn btn-success" onClick={this.loginClicked}>
-            Login
+            로그인
           </button>
         </div>
       </div>
