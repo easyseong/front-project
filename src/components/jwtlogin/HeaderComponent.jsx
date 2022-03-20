@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import AuthenticationService from "./AuthenticationService.js";
+import BoardService from "../../api/BoardService";
 
 class HeaderComponent extends Component {
   render() {
-    const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
+    const isUserLoggedIn = BoardService.isUserLoggedIn();
 
     console.log("===Headeromponent===");
     console.log(isUserLoggedIn);
@@ -44,7 +44,7 @@ class HeaderComponent extends Component {
                 <Link
                   className="nav-link"
                   to="/logout"
-                  onClick={AuthenticationService.logout}
+                  onClick={BoardService.logout}
                 >
                   Logout
                 </Link>
