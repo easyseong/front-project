@@ -12,7 +12,7 @@ class AuthenticationService {
 
     executeHelloService() {
         console.log("===executeHelloService===")
-        return axios.get('http://localhost:8090/hello');        
+        return axios.get('http://localhost:8090/hello');
     }
 
     registerSuccessfulLoginForJwt(username, token) {
@@ -21,12 +21,13 @@ class AuthenticationService {
         localStorage.setItem('authenticatedUser', username); //로그인성공하면 username을 authenticatedUser로 localStorage에 저장
         // sessionStorage.setItem('authenticatedUser', username)
         //this.setupAxiosInterceptors(this.createJWTToken(token))
+
         this.setupAxiosInterceptors();
     }
 
     createJWTToken(token) {
-        return 'Bearer ' + token
-    }
+            return 'Bearer ' + token
+        } //g
 
     setupAxiosInterceptors() {
         axios.interceptors.request.use(
@@ -50,7 +51,7 @@ class AuthenticationService {
     }
 
     isUserLoggedIn() {
-        
+
         //let user = sessionStorage.getItem('authenticatedUser')
         const token = localStorage.getItem('token');
         console.log("===UserloggedInCheck===");
@@ -66,7 +67,7 @@ class AuthenticationService {
     getLoggedInUserName() {
         //let user = sessionStorage.getItem('authenticatedUser')
         let user = localStorage.getItem('authenticatedUser');
-        if(user===null) return '';
+        if (user === null) return '';
         return user;
     }
 
