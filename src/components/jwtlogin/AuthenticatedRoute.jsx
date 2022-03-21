@@ -1,16 +1,15 @@
-import React, {Component} from 'react'
-import {Route, Redirect} from 'react-router-dom'
-import AuthenticationService from './AuthenticationService.js'
+import React, { Component } from "react";
+import { Route, Redirect } from "react-router-dom";
+import BoardService from "../../api/BoardService";
 
-class AuthenticatedRoute extends Component {    
-    render() {
-        if(AuthenticationService.isUserLoggedIn()) {
-            return <Route {...this.props}/>
-        } else {
-            return <Redirect to="/login"/>
-        }
-
+class AuthenticatedRoute extends Component {
+  render() {
+    if (BoardService.isUserLoggedIn()) {
+      return <Route {...this.props} />;
+    } else {
+      return <Redirect to="/sign/login" />;
     }
+  }
 }
 
-export default AuthenticatedRoute
+export default AuthenticatedRoute;

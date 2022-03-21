@@ -17,7 +17,7 @@ class HeaderComponent extends Component {
           <ul className="navbar-nav">
             {isUserLoggedIn && (
               <li>
-                <Link className="nav-link" to="/welcome/user_id">
+                <Link className="nav-link" to="/hello">
                   Home
                 </Link>
               </li>
