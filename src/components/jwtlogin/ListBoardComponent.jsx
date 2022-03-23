@@ -34,17 +34,19 @@ class ListBoardComponent extends Component {
           <table className="table table-striped table-bordered">
             <thead>
               <tr>
-                <th>ID</th>
+                <th>USERNAME</th>
                 <th>EMAIL </th>
-                <th>PASSWORD </th>
+                <th>PHONENUMBER</th>
+                <th>ADDRESS</th>
               </tr>
             </thead>
             <tbody>
               {this.state.boards.map((board) => (
                 <tr key={board.id}>
-                  <td> {board.id} </td>
+                  <td> {board.username} </td>
                   <td> {board.email} </td>
-                  <td> {board.password} </td>
+                  <td> {board.phonenumber} </td>
+                  <td> {board.address} </td>
                 </tr>
               ))}
             </tbody>

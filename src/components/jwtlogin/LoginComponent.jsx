@@ -57,7 +57,7 @@ class LoginComponent extends Component {
             <div className="alert alert-warning">Invalid Credentials</div>
           )}
           {this.state.showSuccessMessage && <div>Login Sucessful</div>}
-          User Name:{" "}
+          Email:{" "}
           <input
             type="text"
             name="username"

@@ -19,6 +19,12 @@ class BoardService {
         return axios.get(BASE_URL);
     }
 
+    validateDuplicated(email) { //{"email":"test@test"}
+        console.log("===이메일중복확인===");
+        return axios.post(BASE_URL +  "/sign/duplicated")
+        
+    }
+
     // registerComponent에서 사용하는 createUser함수 만들기
     createUser(user){
         return axios.post(BASE_URL + "/sign/register",user);
